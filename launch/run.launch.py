@@ -10,6 +10,7 @@ def generate_launch_description():
 
     share_dir = get_package_share_directory('lio_sam')
     parameter_file = LaunchConfiguration('params_file')
+    print("USING PARAM FILE:", os.path.join(share_dir, 'config', 'params.yaml'))
     xacro_path = os.path.join(share_dir, 'config', 'robot.urdf.xacro')
     rviz_config_file = os.path.join(share_dir, 'config', 'rviz2.rviz')
 
