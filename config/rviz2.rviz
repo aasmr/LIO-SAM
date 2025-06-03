@@ -51,8 +51,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 11.115425109863281
-        Min Value: -5.4839863777160645
+        Max Value: 29.266101837158203
+        Min Value: -0.7622852325439453
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -115,10 +115,10 @@ Visualization Manager:
           odom:
             base_link:
               chassis_link:
+                imu_link:
+                  laser_sensor_frame:
+                    {}
                 navsat_link:
-                  {}
-              imu_link:
-                laser_sensor_frame:
                   {}
               rslidar:
                 {}
@@ -261,10 +261,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7753978967666626
+      Pitch: 0.8553979992866516
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.76858377456665
+      Yaw: 1.7003977298736572
     Saved: ~
 Window Geometry:
   Displays:

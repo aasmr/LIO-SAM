@@ -4,8 +4,9 @@
     # Topics
     pointCloudTopic: "/rslidar_points"                   # Point cloud data
     imuTopic: "/imu/data"                        # IMU data
-    odomTopic: "/odometry/gnss"                    # IMU pre-preintegration odometry, same frequency as IMU
-    gpsTopic: "/gps/fix"                    # GPS odometry topic from navsat, see module_navsat.launch file
+    odomTopic: "/odometry/imu"                   # IMU pre-preintegration odometry, same frequency as IMU
+    gpsTopic: "/odometry/gnss"                  # GPS odometry topic from navsat, see module_navsat.launch file
+
 
     # Frames
     lidarFrame: "rslidar"
@@ -14,14 +15,14 @@
     mapFrame: "map"
 
     # GPS Settings
-    useImuHeadingInitialization: false           # if using GPS data, set to "true"
-    useGpsElevation: false                       # if GPS elevation is bad, set to "false"
+    useImuHeadingInitialization: true           # if using GPS data, set to "true"
+    useGpsElevation: true                       # if GPS elevation is bad, set to "false"
     gpsCovThreshold: 2.0                         # m^2, threshold for using GPS data
     poseCovThreshold: 25.0                       # m^2, threshold for using GPS data
 
     # Export settings
-    savePCD: false                               # https://github.com/TixiaoShan/LIO-SAM/issues/3
-    savePCDDirectory: "/Downloads/LOAM/"         # in your home folder, starts and ends with "/". Warning: the code deletes "LOAM" folder then recreates it. See "mapOptimization" for implementation
+    savePCD: true                               # https://github.com/TixiaoShan/LIO-SAM/issues/3
+    savePCDDirectory: "home/nvidia22/ros2_humble/sdcard/map"         # in your home folder, starts and ends with "/". Warning: the code deletes "LOAM" folder then recreates it. See "mapOptimization" for implementation
 
     # Sensor Settings
     sensor: velodyne                               # lidar sensor type, either 'velodyne', 'ouster' or 'livox'

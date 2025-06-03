@@ -300,7 +300,15 @@ public:
         // extract time stamp
         timeLaserInfoStamp = msgIn->header.stamp;
         timeLaserInfoCur = stamp2Sec(msgIn->header.stamp);
-
+        
+        //modif start
+	pcl::PointCloud<pcl::PointXYZI>::Ptr currentCloud(new pcl::PointCloud<pcl::PointXYZI>);
+        pcl::fromROSMsg(msgIn->cloud_deskewed, *currentCloud);
+    
+	pcl::PointCloud<pcl::PointXYZI>::Ptr filteredCloud(new pcl::PointCloud<pcl::PointXYZI>);
+	std::vector<int> indices;
+	pcl::removeNaNFromPointCloud(*currentCloud, *filteredCloud, indices);
+	//modif end
         // extract info and feature cloud
         cloudInfo = *msgIn;
         pcl::fromROSMsg(msgIn->cloud_corner,  *laserCloudCornerLast);
